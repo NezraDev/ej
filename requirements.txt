@@ -1,3 +1,4 @@
 Flask
 gunicorn
 flask-mail
+web: python porfolio.py
