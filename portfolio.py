@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request, jsonify
 from flask_mail import Mail, Message
 
+from fastapi import FastAPI
+
+app = FastAPI()
+
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
