@@ -1,0 +1,71 @@
+<!-- templates/cv.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CV</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .cv {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .cv h1 {
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            color: #333;
+        }
+        .cv-preview {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: auto;
+            max-height: 600px; /* makes it scrollable if tall */
+            background: #fff;
+        }
+        .cv-preview img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .cv button {
+            padding: 12px 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .cv button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <section class="cv" id="cv">
+        <h1>MY CV</h1>
+
+        <!-- Scrollable CV image preview -->
+        <div class="cv-preview">
+            <img src="{{ url_for('static', filename='images/cv-preview.png') }}" alt="EJ delos Reyes CV">
+        </div>
+
+        <!-- Download button -->
+        <div>
+            <a href="{{ url_for('static', filename='images/EJ_CV.pdf') }}" target="_blank" rel="noopener noreferrer">
+                <button>Download Full CV (PDF)</button>
+            </a>
+        </div>
+    </section>
+</body>
+</html>
